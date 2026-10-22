@@ -1,5 +1,7 @@
 # Completeness checklist (22 Oct 2026, v0.1.0)
 
+**Origin check (22 Oct 2026, GitHub API):** `main` of `MeruLocal/mahodaysolar_website_MCP` holds only the scaffold commit `7ebf18f` (`.gitignore`, `README.md`); the only branches and PRs are this work (#1 spec, #2 server). No other Mahoday MCP exists in the `MeruLocal` org, and site PR #3 contains no MCP files. Confirmed by the parent session.
+
 Done = exists in this PR and was run or tested here. Gap = not done, with the reason.
 
 | Item | State | Evidence / reason |
