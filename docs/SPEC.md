@@ -2,7 +2,9 @@
 
 **Server audited:** the *website* MCP for Mahoday Solar (public, anonymous, read-only). This is not a CRM MCP and has no account data.
 **Measured at:** `MeruLocal/mahodaysolar_website_MCP` `main` @ `7ebf18f` (one scaffold commit: README + .gitignore).
-**Verdict:** there is no server to audit. Every protocol, security and content check in the RSS-MCP-Audit skill is *not applicable yet*; this document is the spec that, once built, must pass those checks. Nothing below is measured behaviour of running code.
+**Update (same day):** v0.1.0 of the server is now built in a follow-up PR (see `README.md`, `docs/COMPLETENESS.md`). Section 4.2 is the original design; **as built, tool names are `solar_calculate_size`, `loan_calculate_emi`, `amc_get_checklist` (replaces three AMC checklist tools), `quote_get_link`, etc., and `page_url` is carried as `citations[].url`** (planned pages are listed separately without a URL). Findings were reviewed by Astra; see `docs/astra-review.md`.
+
+**Verdict at the time of the audit:** there was no server to audit. Every protocol, security and content check in the RSS-MCP-Audit skill is *not applicable yet*; this document is the spec that, once built, must pass those checks. Nothing below is measured behaviour of running code.
 
 ## 1. What was measured (evidence)
 
@@ -26,18 +28,18 @@
 | F5 | Medium | Slug drift between docs and build: research docs use `/commercial-solar-om` and plan `/solar-panel-warranty` + `/pm-surya-ghar-subsidy` hub with 301; the build has `solar-plant-om` and blog `solar-panel-warranty-guide` | site `lib/services.ts`, `lib/posts.ts` vs `r2/docs/03-page-architecture.md` | section 4.4: page index generated from the site sitemap at build time; CI fails on any non-200 |
 | F6 | Medium | Brand isolation: AMC-software vocabulary belongs to TaskSiddhi/HGC | `r2/docs/09-ownership-split.md` | R7: no CRM/software pitch, no cross-brand links |
 | F7 | Medium | Traffic expectation | n/a | section 8: an MCP does not rank in Google; value is assistant citations and referral links; no traffic number promised |
-| F8 | Low | Spec runway: protocol 2026-07-28 removes sessions | RSS skill section 6 | build stateless from day one (4.1) |
+| F8 | Low | Spec runway: the RSS skill (section 6) reports that revision 2026-07-28 removes sessions; **I did not verify this against the specification** | RSS skill section 6 | build stateless from day one (4.1) |
 
 ## 3. Positioning
 
-A public, read-only knowledge-and-calculator server so an AI assistant answering a solar buyer can (a) compute transparent estimates from the user's own inputs, (b) retrieve sourced, dated explainers, and (c) cite and link the exact Mahoday page. Every tool result carries `page_url` and `last_reviewed`, so citations point at the site.
+A public, read-only knowledge-and-calculator server so an AI assistant answering a solar buyer can (a) compute transparent estimates from the user's own inputs, (b) retrieve sourced, dated explainers, and (c) cite and link the exact Mahoday page. Every tool result carries `citations[]` and `last_reviewed`, so citations point at the site.
 
 ## 4. Build spec
 
 ### 4.1 Transport and platform
 - TypeScript, official `@modelcontextprotocol/sdk`, **Streamable HTTP, stateless** (no `Mcp-Session-Id` dependence), endpoint **`/mcp`** (not `/sse`, avoiding the confusion the HGC server suffers). Also `/health`, `/version` (tool count, content version, `content_checked_at`), `/.well-known/mcp.json` (server card).
 - Anonymous, no auth, **no write tools at launch** (lead capture stays on the site form; a tool only returns a prefilled link). Every tool: `readOnlyHint:true`, `destructiveHint:false`, `idempotentHint:true`, `openWorldHint:false`, a `title`, and an `outputSchema` with `structuredContent`.
-- Per-IP rate limit (fail open when no IP header, as on the site), request body cap, 10 s tool timeout, Zod-validated bounded inputs, JSON-RPC errors that never echo free text.
+- Per-IP rate limit (socket address by default; with `MCP_TRUST_PROXY=1` the last `X-Forwarded-For` entry, i.e. exactly one trusted appending proxy), request body cap (tools are synchronous and do no I/O, so no per-tool timeout), Zod-validated bounded inputs, JSON-RPC errors that never echo free text.
 - Never `?? 0` or `?? []` over lookups: a missing record returns explicit `not_found` / `unsourced`.
 - Content is static JSON in the repo (no DB, no secrets, no outbound calls at request time). Entered bill amounts and other inputs are never logged.
 
@@ -68,7 +70,7 @@ Out of scope at launch: prices, savings, ROI, ratings, years in business, projec
 - Prompts: `size-my-rooftop-system`, `evaluate-an-amc-quote`, `prepare-for-installation-visit`, `is-my-system-underperforming`.
 
 ### 4.4 Data model (the anti-drift core)
-`content/*.json` entries: `{id, value, source_url|null, last_checked|null, verifier|null, page_url}`. `scripts/build-content.mjs` generates the page index from the site sitemap and **fails CI** if: a numeric subsidy or tariff value lacks `source_url` + `last_checked`; `last_checked` is older than 35 days (subsidy) or 100 days (net metering); any emitted URL is not 200; the tool count differs across `/version`, README, `server.json` and `mcp.json` (one canonical count). This targets the HGC server's recurring failures (630 vs 525 integrations; Rs 1,099 reappearing).
+`content/*.json` entries: `{id, value, source_url|null, last_checked|null, verifier|null, page_url}`. `scripts/build-content.mjs` generates the page index from the site sitemap and **fails CI** if: a numeric subsidy or tariff value lacks `source_url` + `last_checked` + `verifier`, or its `source_url` is not on an allow-list of official domains (draft PDFs and vendor pages rejected); `last_checked` is older than 35 days (subsidy) or 100 days (net metering); any emitted URL is not 200; the tool count differs across `/version`, README, `server.json` and `mcp.json` (one canonical count). This targets the HGC server's recurring failures (630 vs 525 integrations; Rs 1,099 reappearing).
 
 ## 5. Content-truth rules (binding)
 - R1 No number for subsidy, tariff, irradiance, price, savings or payback unless sourced as in 4.4.
@@ -76,7 +78,7 @@ Out of scope at launch: prices, savings, ROI, ratings, years in business, projec
 - R3 Calculators contain no built-in tariff, irradiance or performance ratio.
 - R4 No "government approved/empanelled" unless on the official vendor list and linked.
 - R5 Overseas content absent until the founder confirms operations.
-- R6 Every payload carries `last_reviewed` and `page_url`; a tool whose page does not exist yet returns `page_url: null`, never a guessed URL.
+- R6 Every payload carries `last_reviewed` and `citations[]`; a tool whose page does not exist yet cites no URL, never a guessed one.
 - R7 No CRM/software pitch or cross-brand link.
 - R8 Owner-confirmed facts only; empty means omitted.
 - R9 No invented FAQs or reviews; no `aggregateRating`.
@@ -93,12 +95,12 @@ Out of scope at launch: prices, savings, ROI, ratings, years in business, projec
 4. README first screen: what it answers, one-line install, three example prompts.
 
 ## 8. Traffic and citation plan (honest)
-An MCP server is not a Google ranking surface. Expected value: assistants with it installed cite and link Mahoday pages; directories (official registry, Smithery, Glama, PulseMCP) give small referral and brand-search lift. No volume forecast is made. Measure with `utm_source=mcp` on every emitted `page_url` and aggregate call counters (no inputs logged). Real traffic still depends on the site being live and indexed (launch gate owned by the founder). Demand evidence for tool priority (Google Keyword Planner, India, 22 Oct 2026, research folder): calculators 5,400 / 4,400 / 1,300; net metering 5,400; UP subsidy 2,900; solar loan 2,400; EMI calculator 1,300; solar amc 110. So calculator and subsidy tools first, AMC tools second.
+An MCP endpoint is not itself an indexable page, so it does not rank in Google. Hypothesis to measure, not an observed benefit: assistants with it installed cite and link Mahoday pages, and directory listings (official registry, Smithery, Glama, PulseMCP) may add small referral and brand-search lift. No volume forecast is made. Measure with `utm_source=mcp` on every emitted `page_url` and aggregate call counters (no inputs logged). Real traffic still depends on the site being live and indexed (launch gate owned by the founder). Demand evidence for tool priority (Google Keyword Planner, India, 22 Oct 2026, research folder): calculators 5,400 / 4,400 / 1,300; net metering 5,400; UP subsidy 2,900; solar loan 2,400; EMI calculator 1,300; solar amc 110. So calculator and subsidy tools first, AMC tools second.
 
 ## 9. Acceptance tests (before any registry submission)
 - RSS `audit-live-mcp.mjs`: 0 FAIL; the standing warns resolved (`title`, `outputSchema`, `listChanged` declared).
 - `npx @modelcontextprotocol/inspector --cli <url> --transport http --method tools/list`; official `modelcontextprotocol/conformance`.
-- Unit tests per formula with known answers computed independently in the test. Contract test: no tool response contains a currency amount, subsidy percentage or "savings" unless the field is sourced.
+- Unit tests per formula with known answers computed independently in the test. Contract test: no tool response states a subsidy amount or percentage, tariff, price or "savings"; amounts derived from the caller's own inputs (EMI) are allowed.
 - Link test: all emitted URLs 200 (bot-wall 403s checked in a browser). Statelessness test: `tools/call` without a prior initialize.
 - Brand test: output corpus contains no "CRM", "TaskSiddhi", "HelloGrowth".
 - Version parity: package.json / server.json / mcp.json / README tool count.

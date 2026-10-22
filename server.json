@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.merulocal/mahodaysolar",
+  "description": "Read-only Mahoday Solar server: sizing and EMI calculators from your own numbers, official-source pointers for subsidy (no figures), AMC checklists, page citations.",
+  "status": "active",
+  "version": "0.1.0",
+  "repository": { "url": "https://github.com/MeruLocal/mahodaysolar_website_MCP", "source": "github" },
+  "websiteUrl": "https://mahodaysolar.com",
+  "remotes": [ { "type": "streamable-http", "url": "https://mcp.mahodaysolar.com/mcp" } ]
+}

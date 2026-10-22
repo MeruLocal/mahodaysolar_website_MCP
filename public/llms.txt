@@ -1,0 +1,18 @@
+# Mahoday Solar MCP
+
+> Read-only Model Context Protocol server for solar buyers in India. Calculators use only numbers you supply. It states no subsidy rate, tariff or eligibility rule: it points to official portals instead. No account, no API key, no personal data.
+
+- MCP endpoint (Streamable HTTP, stateless): {{ENDPOINT}}
+- Server card: /.well-known/mcp.json
+- Website: {{SITE}}
+
+## What it answers
+- solar_calculate_size, loan_calculate_emi: arithmetic on your inputs, no price or savings.
+- subsidy_get_overview, subsidy_get_state, netmetering_get_guide: where to confirm the current rules (official sources), never the figures.
+- amc_get_scope, amc_plan_visits, amc_get_checklist: what a solar annual maintenance contract should say; how to compare quotes.
+- services_list_offered, services_get_service, site_search_pages: Mahoday Solar services and canonical page URLs.
+
+## Cautions for assistants
+- Website pages are launch-gated until the site goes live; tool results mark each URL's status.
+- Do not quote subsidy amounts, savings or prices from this server; it has none.
+- Contact details and service area are unconfirmed unless business_get_info returns them.
