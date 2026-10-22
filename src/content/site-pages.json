@@ -1,0 +1,597 @@
+{
+  "generated_from": "MeruLocal/mahodaysolar_website branch feat/site-build-2026-10-22 (PR #3, draft, launch-gated)",
+  "services": [
+    {
+      "slug": "solar-amc",
+      "path": "/solar-amc",
+      "name": "Solar AMC",
+      "summary": "A written annual maintenance contract: scheduled visits, checks and a clear response promise.",
+      "description": "What a solar AMC covers, how visits are scheduled, how pricing is worked out and what to ask before you sign. Plans for homes, societies and commercial plants.",
+      "includes": [
+        "Scheduled preventive visits through the year",
+        "Panel, wiring, earthing and mounting inspection",
+        "Inverter health check and error-log review",
+        "Generation check against what your system should produce",
+        "A written service report after every visit",
+        "A stated response approach for breakdown calls"
+      ],
+      "steps": [
+        {
+          "t": "Tell us about your system",
+          "d": "Size in kW, inverter make, type of site (home, society, factory) and where it is."
+        },
+        {
+          "t": "We confirm scope in writing",
+          "d": "Visit count, what is checked, what is and is not covered, and how breakdown calls are handled."
+        },
+        {
+          "t": "Visits happen on a schedule",
+          "d": "Each visit follows the same checklist so results can be compared over time."
+        },
+        {
+          "t": "You get a report",
+          "d": "Readings, findings and recommended actions, so you can see what was done."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is a solar AMC?",
+          "a": "A solar AMC is an annual maintenance contract: an agreement for scheduled visits, inspections and a stated way of handling faults, usually for twelve months at a time."
+        },
+        {
+          "q": "Does a solar AMC cover spare parts?",
+          "a": "It depends on the contract. Some AMCs cover visits and labour only, with parts quoted separately; others include certain parts. Ask for this in writing before signing any AMC."
+        },
+        {
+          "q": "How often are visits done?",
+          "a": "It depends on the plan and the site. Dusty locations and larger plants usually need more frequent visits. We agree the schedule with you and write it into the contract."
+        },
+        {
+          "q": "Is an AMC the same as my panel warranty?",
+          "a": "No. A warranty is the manufacturer's promise about product defects or performance. An AMC is a service arrangement for upkeep. They work together; see our guide to solar panel warranties."
+        },
+        {
+          "q": "Can you take over maintenance of a system someone else installed?",
+          "a": "Usually yes. We start with an inspection so the contract reflects the system's actual condition. Tell us the make and size and we will confirm."
+        }
+      ],
+      "related": [
+        "solar-amc-renewal",
+        "solar-panel-cleaning",
+        "solar-panel-maintenance"
+      ],
+      "guides": [
+        "solar-amc-checklist",
+        "amc-vs-pay-per-visit"
+      ]
+    },
+    {
+      "slug": "solar-amc-renewal",
+      "path": "/solar-amc-renewal",
+      "name": "Solar AMC renewal",
+      "summary": "Renew before your contract lapses, and review what you actually got from the last one.",
+      "description": "When to renew a solar AMC, what changes at renewal, what happens if it lapses, and a checklist to review before you renew. Send a renewal request online.",
+      "includes": [
+        "Review of last year's service reports",
+        "Scope adjusted to the system's current condition",
+        "Renewal quote with inclusions listed",
+        "No gap between the old and new contract period",
+        "Option to change visit frequency or add cleaning"
+      ],
+      "steps": [
+        {
+          "t": "Send a renewal request",
+          "d": "Share your contract end date and system details using the form below."
+        },
+        {
+          "t": "We review the past year",
+          "d": "Visit reports, faults raised and generation trend, so the new scope fits."
+        },
+        {
+          "t": "You receive the renewal terms",
+          "d": "Inclusions, visit schedule and response approach, in writing."
+        },
+        {
+          "t": "Cover continues",
+          "d": "We aim to renew before the end date so there is no gap."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How early should I renew my solar AMC?",
+          "a": "A few weeks before the end date is sensible, so any changes to scope can be agreed and the new period starts the day the old one ends."
+        },
+        {
+          "q": "Can I change the plan when I renew?",
+          "a": "Yes. Renewal is the right moment to change visit frequency, add or remove cleaning, or add remote monitoring."
+        },
+        {
+          "q": "My AMC was with another company. Can I renew with you?",
+          "a": "You can start a new contract with us. We usually begin with an inspection so the scope reflects the system as it is now."
+        },
+        {
+          "q": "What if my AMC already expired?",
+          "a": "Send a request anyway. We will suggest an inspection first and then a contract that reflects what we find."
+        }
+      ],
+      "related": [
+        "solar-amc",
+        "solar-monitoring",
+        "solar-panel-maintenance"
+      ],
+      "guides": [
+        "solar-panel-warranty-guide",
+        "solar-amc-checklist"
+      ]
+    },
+    {
+      "slug": "solar-panel-maintenance",
+      "path": "/solar-panel-maintenance",
+      "name": "Solar panel maintenance",
+      "summary": "Preventive checks that catch dust, loose connections, shading and inverter faults early.",
+      "description": "A practical solar panel maintenance checklist: what is inspected, how often and how performance is checked. For homes, societies and commercial plants.",
+      "includes": [
+        "Visual inspection of panels for cracks, hot spots and delamination",
+        "Mounting structure, fasteners and corrosion check",
+        "DC and AC cable, connector and junction box inspection",
+        "Earthing and surge protection check",
+        "Inverter display, error log and ventilation check",
+        "Generation check against expected output"
+      ],
+      "steps": [
+        {
+          "t": "Book a visit",
+          "d": "Tell us the system size, location and any problem you have noticed."
+        },
+        {
+          "t": "Inspection on site",
+          "d": "A checklist covers panels, structure, wiring, earthing and the inverter."
+        },
+        {
+          "t": "Findings in writing",
+          "d": "What was found, what was fixed on the spot and what needs a quote."
+        },
+        {
+          "t": "Plan the next visit",
+          "d": "Frequency is set from the condition of the site, not a fixed calendar."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does solar need maintenance at all?",
+          "a": "Solar has no major moving parts, but it still needs periodic cleaning and inspection. Neglected systems commonly lose output slowly and nobody notices."
+        },
+        {
+          "q": "How much does maintenance cost?",
+          "a": "It depends on system size, site access and how often visits are needed. We quote after understanding your system and list exactly what is included."
+        },
+        {
+          "q": "Do I need an AMC or can I book single visits?",
+          "a": "Both work. A single visit suits a one-off check; an AMC suits owners who want scheduled visits and a record over time."
+        },
+        {
+          "q": "Can you maintain any inverter brand?",
+          "a": "Tell us the make and model when you enquire and we will confirm what we can service."
+        }
+      ],
+      "related": [
+        "solar-amc",
+        "solar-panel-cleaning",
+        "solar-inverter-repair"
+      ],
+      "guides": [
+        "why-solar-output-drops",
+        "how-often-to-clean-solar-panels"
+      ]
+    },
+    {
+      "slug": "solar-panel-cleaning",
+      "path": "/solar-panel-cleaning",
+      "name": "Solar panel cleaning",
+      "summary": "Safe cleaning methods and a sensible schedule, so dust does not quietly cut your generation.",
+      "description": "How solar panels should be cleaned, how often it is worth doing and what to avoid. Book panel cleaning for homes, societies and commercial rooftops.",
+      "includes": [
+        "Cleaning method matched to the site and the soiling",
+        "Safe roof access and working practices",
+        "Soft, non-abrasive tools and clean water",
+        "Before and after generation reading where available",
+        "A visual check of panels and fixings while on the roof"
+      ],
+      "steps": [
+        {
+          "t": "Share your site details",
+          "d": "Number of panels or kW, roof type and access, and how long since the last clean."
+        },
+        {
+          "t": "We plan the clean",
+          "d": "Method, water access and timing, ideally in the cooler part of the day."
+        },
+        {
+          "t": "Cleaning visit",
+          "d": "Panels are cleaned, checked for damage and photographed if you want a record."
+        },
+        {
+          "t": "Set a schedule",
+          "d": "A frequency based on how quickly your site gets dirty."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Do solar panels really need cleaning?",
+          "a": "In most locations, yes. Rain removes some dust but not all, and droppings or film can stay for months. Clean panels let more light through."
+        },
+        {
+          "q": "How do I know whether cleaning would help?",
+          "a": "Compare generation on similar sunny days before and after cleaning. A clear jump tells you soiling was costing you output."
+        },
+        {
+          "q": "Can I clean panels myself?",
+          "a": "Light dust from ground level can be hosed with water at low pressure. Roof access carries a fall risk, so for rooftops we recommend people trained to work at height."
+        },
+        {
+          "q": "Is panel cleaning included in an AMC?",
+          "a": "That depends on the plan. We state clearly in the contract whether cleaning is included, extra, or on request."
+        }
+      ],
+      "related": [
+        "solar-amc",
+        "solar-panel-maintenance",
+        "solar-monitoring"
+      ],
+      "guides": [
+        "how-often-to-clean-solar-panels",
+        "does-dust-reduce-solar-output"
+      ]
+    },
+    {
+      "slug": "solar-inverter-repair",
+      "path": "/solar-inverter-repair",
+      "name": "Solar inverter repair",
+      "summary": "Diagnosis and repair for inverters that trip, show errors or have stopped producing.",
+      "description": "What to do when your solar inverter shows an error, trips or stops, and how inverter diagnosis and repair works. Request an inverter service visit.",
+      "includes": [
+        "Fault diagnosis from the display, error log and on-site readings",
+        "Checks on DC input, AC output, earthing and grid conditions",
+        "Repair or replacement advice, with the reasoning",
+        "Settings and firmware review where relevant",
+        "Re-commissioning and a test after the fix"
+      ],
+      "steps": [
+        {
+          "t": "Tell us what you see",
+          "d": "Make, model, the error shown, and when the problem started."
+        },
+        {
+          "t": "Diagnosis visit",
+          "d": "We read the log and measure on site to find the cause."
+        },
+        {
+          "t": "Quote and decision",
+          "d": "Repair, replace or fix something upstream, with the options explained."
+        },
+        {
+          "t": "Fix and test",
+          "d": "The system is brought back up and generation is confirmed."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Why does my solar inverter keep tripping?",
+          "a": "Common causes are grid voltage out of range, overheating, an earth fault or a loose connection. The error log and on-site measurements show which."
+        },
+        {
+          "q": "Should I open the inverter to check?",
+          "a": "No. Inverters carry dangerous DC and AC voltages. Photograph the display and call a qualified technician."
+        },
+        {
+          "q": "Which inverter brands do you service?",
+          "a": "Tell us the make and model and we will confirm whether we can service it."
+        },
+        {
+          "q": "Will repair affect my warranty?",
+          "a": "It can. If your inverter is under warranty, contact the manufacturer or installer first, or tell us and we will help work out the right route."
+        }
+      ],
+      "related": [
+        "solar-service",
+        "solar-amc",
+        "solar-monitoring"
+      ],
+      "guides": [
+        "signs-your-solar-inverter-needs-attention",
+        "solar-inverter-error-messages-explained"
+      ]
+    },
+    {
+      "slug": "solar-service",
+      "path": "/solar-service",
+      "name": "Solar service",
+      "summary": "Something not right with your system? Request a service visit and we will tell you the cause.",
+      "description": "Request solar servicing for low generation, faults, damaged panels or an inverter alarm. Tell us your location and we will confirm coverage and next steps.",
+      "includes": [
+        "Investigation of low generation or intermittent faults",
+        "Panel, wiring and inverter inspection",
+        "Diagnosis and a written explanation",
+        "Quote for repair if parts or labour are needed",
+        "Advice on whether an AMC would help"
+      ],
+      "steps": [
+        {
+          "t": "Describe the problem",
+          "d": "What you have seen, since when, and the system size and inverter make."
+        },
+        {
+          "t": "We confirm coverage",
+          "d": "Share your location and we will confirm whether we can attend and when."
+        },
+        {
+          "t": "Visit and diagnosis",
+          "d": "We inspect, measure and explain the cause in plain language."
+        },
+        {
+          "t": "Fix or plan",
+          "d": "Repair on the spot where possible, or a quote for what is needed."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How quickly can someone visit?",
+          "a": "It depends on your location and our schedule. When you send a request we confirm timing as part of replying."
+        },
+        {
+          "q": "Do you service systems you did not install?",
+          "a": "Usually yes. Tell us the make and size and we will confirm."
+        },
+        {
+          "q": "What does a service visit cost?",
+          "a": "It depends on the problem and the site. We tell you before the visit what is involved and quote any repair before doing it."
+        }
+      ],
+      "related": [
+        "solar-inverter-repair",
+        "solar-panel-maintenance",
+        "solar-amc"
+      ],
+      "guides": [
+        "why-solar-output-drops",
+        "signs-your-solar-inverter-needs-attention"
+      ]
+    },
+    {
+      "slug": "solar-plant-om",
+      "path": "/solar-plant-om",
+      "name": "Solar plant O&M",
+      "summary": "Operations and maintenance for factory, school, hospital and society plants, with reporting.",
+      "description": "Solar plant maintenance and O&M for commercial and industrial plants: scope, reporting, response commitments and performance checks. Request a proposal.",
+      "includes": [
+        "Scheduled preventive maintenance with a plant checklist",
+        "Inverter and string-level checks",
+        "Panel cleaning planned around generation seasons",
+        "Performance review against expected generation",
+        "Periodic reporting for owners, finance and facility teams",
+        "Fault response approach agreed in the contract"
+      ],
+      "steps": [
+        {
+          "t": "Share plant details",
+          "d": "Capacity, inverter make, site type, existing monitoring and any current contract."
+        },
+        {
+          "t": "Site assessment",
+          "d": "We inspect the plant and review historical generation where available."
+        },
+        {
+          "t": "O&M proposal",
+          "d": "Scope, schedule, reporting format and response approach in writing."
+        },
+        {
+          "t": "Ongoing operation",
+          "d": "Scheduled visits, reports and fault handling as agreed."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is solar O&M?",
+          "a": "O&M stands for operations and maintenance: the routine upkeep, monitoring and fault handling that keeps a solar plant producing as designed."
+        },
+        {
+          "q": "Can you take over O&M from the original installer?",
+          "a": "Often yes. We start with an assessment and review of the plant's history so the new scope reflects its real condition."
+        },
+        {
+          "q": "Do you work with plants of any size?",
+          "a": "Tell us your capacity and site type and we will confirm whether we can take it on."
+        }
+      ],
+      "related": [
+        "solar-amc",
+        "solar-monitoring",
+        "solar-panel-maintenance"
+      ],
+      "guides": [
+        "solar-amc-checklist",
+        "why-solar-output-drops"
+      ]
+    },
+    {
+      "slug": "solar-monitoring",
+      "path": "/solar-monitoring",
+      "name": "Solar monitoring",
+      "summary": "Remote visibility of generation and faults, so problems are caught in days, not months.",
+      "description": "What solar monitoring does, what it can and cannot tell you, and how alerts and generation reports help you catch faults early. Add monitoring to your system.",
+      "includes": [
+        "Review of what your inverter can already report",
+        "Setup of remote generation tracking",
+        "Alerts when generation drops or the inverter faults",
+        "Periodic generation reports",
+        "A route from alert to service visit"
+      ],
+      "steps": [
+        {
+          "t": "Check what you have",
+          "d": "Many inverters already include a monitoring app or portal."
+        },
+        {
+          "t": "Set up or add monitoring",
+          "d": "Connect the inverter or add a meter or data logger where needed."
+        },
+        {
+          "t": "Choose the alerts",
+          "d": "Set sensible thresholds so alerts mean something."
+        },
+        {
+          "t": "Act on what it shows",
+          "d": "When an alert fires, a service visit can follow."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does my inverter already have monitoring?",
+          "a": "Many modern inverters include a Wi-Fi or app-based monitoring feature. Tell us the make and model and we can check what yours supports."
+        },
+        {
+          "q": "Do I need monitoring if I have an AMC?",
+          "a": "It is not required, but it helps. Monitoring can show problems between visits."
+        },
+        {
+          "q": "Will monitoring tell me when panels need cleaning?",
+          "a": "It can show a generation decline that suggests soiling, but only a visit confirms the cause."
+        }
+      ],
+      "related": [
+        "solar-amc",
+        "solar-panel-cleaning",
+        "solar-plant-om"
+      ],
+      "guides": [
+        "why-solar-output-drops",
+        "signs-your-solar-inverter-needs-attention"
+      ]
+    },
+    {
+      "slug": "solar-installation",
+      "path": "/solar-installation",
+      "name": "Solar installation",
+      "summary": "Planning a new rooftop system? A site survey, a sized design and a clear scope of work.",
+      "description": "How solar panel installation works, from site survey and design to approvals, installation and commissioning. Talk to us about a new rooftop system.",
+      "includes": [
+        "Site survey: roof, shade, structure and electrical connection",
+        "System sizing from your usage and available space",
+        "Equipment and layout proposal in writing",
+        "Guidance through approvals and net metering where applicable",
+        "Installation, testing and commissioning",
+        "Handover with documentation and warranty details"
+      ],
+      "steps": [
+        {
+          "t": "Share your usage",
+          "d": "A recent electricity bill and details of the roof or space."
+        },
+        {
+          "t": "Survey and design",
+          "d": "We assess the site and size a system to suit."
+        },
+        {
+          "t": "Proposal and approvals",
+          "d": "Scope, equipment and timeline in writing; paperwork guidance."
+        },
+        {
+          "t": "Install and commission",
+          "d": "Installation, testing and handover, with a maintenance plan for afterwards."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How big a system do I need?",
+          "a": "It depends on your electricity usage, available roof space and budget. A survey and your recent bills let us size it."
+        },
+        {
+          "q": "Do I get a subsidy?",
+          "a": "Eligibility depends on the scheme and your category. See the official PM Surya Ghar portal for current rules."
+        },
+        {
+          "q": "How long does installation take?",
+          "a": "It depends on approvals, the site and equipment. We give an expected schedule with the proposal."
+        },
+        {
+          "q": "Will the system need maintenance?",
+          "a": "Yes, light but regular: cleaning and periodic inspection. An AMC is one way to arrange it."
+        }
+      ],
+      "related": [
+        "solar-amc",
+        "solar-panel-maintenance",
+        "solar-monitoring"
+      ],
+      "guides": [
+        "pm-surya-ghar-subsidy",
+        "solar-panel-warranty-guide"
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "slug": "solar-amc-checklist",
+      "path": "/blog/solar-amc-checklist",
+      "title": "Solar AMC checklist: what to ask before you sign",
+      "description": "A plain checklist of what a solar annual maintenance contract should state: visits, scope, parts, response, reporting and exclusions.",
+      "topic": "AMC"
+    },
+    {
+      "slug": "solar-panel-warranty-guide",
+      "path": "/blog/solar-panel-warranty-guide",
+      "title": "Solar panel warranty: what it covers and what an AMC adds",
+      "description": "The difference between a solar product warranty and a performance warranty, how claims usually work, and what a maintenance contract adds on top.",
+      "topic": "Warranty"
+    },
+    {
+      "slug": "pm-surya-ghar-subsidy",
+      "path": "/blog/pm-surya-ghar-subsidy",
+      "title": "PM Surya Ghar subsidy: how the rooftop solar subsidy works",
+      "description": "A plain-language overview of the PM Surya Ghar rooftop solar subsidy (the rooftop solar yojana): who it is for, the process, and where to confirm current rules.",
+      "topic": "Subsidy"
+    },
+    {
+      "slug": "how-often-to-clean-solar-panels",
+      "path": "/blog/how-often-to-clean-solar-panels",
+      "title": "How often should you clean solar panels?",
+      "description": "How to decide a cleaning schedule for solar panels: dust, rain, birds and trees, the best time of day, and how to check whether cleaning helped.",
+      "topic": "Cleaning"
+    },
+    {
+      "slug": "why-solar-output-drops",
+      "path": "/blog/why-solar-output-drops",
+      "title": "Why solar output drops: the usual causes and how to find them",
+      "description": "The common reasons solar generation falls: soiling, shade, inverter faults, loose connections, weather and ageing, plus how to narrow down the cause.",
+      "topic": "Performance"
+    },
+    {
+      "slug": "amc-vs-pay-per-visit",
+      "path": "/blog/amc-vs-pay-per-visit",
+      "title": "Solar AMC vs pay-per-visit service: which suits you?",
+      "description": "Compare a solar AMC with booking single service visits: what each gives you, who each suits and the questions that decide it.",
+      "topic": "AMC"
+    },
+    {
+      "slug": "signs-your-solar-inverter-needs-attention",
+      "path": "/blog/signs-your-solar-inverter-needs-attention",
+      "title": "Signs your solar inverter needs attention",
+      "description": "Warning signs that a solar inverter needs a technician: repeated trips, alarms, noise, heat, a blank display and unexplained low generation.",
+      "topic": "Inverter"
+    },
+    {
+      "slug": "does-dust-reduce-solar-output",
+      "path": "/blog/does-dust-reduce-solar-output",
+      "title": "Does dust reduce solar output? What affects soiling losses",
+      "description": "How dust, droppings and film reduce solar generation, what makes soiling worse in some regions, and how to measure the loss on your own system.",
+      "topic": "Cleaning"
+    },
+    {
+      "slug": "solar-inverter-error-messages-explained",
+      "path": "/blog/solar-inverter-error-messages-explained",
+      "title": "Solar inverter error messages explained (without brand codes)",
+      "description": "What common solar inverter faults usually mean: grid voltage or frequency, insulation or earth fault, overheating, DC input problems and communication loss.",
+      "topic": "Inverter"
+    }
+  ]
+}

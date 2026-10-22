@@ -1,0 +1,10 @@
+{
+  "name": "mahodaysolar-mcp",
+  "title": "Mahoday Solar",
+  "description": "Read-only server for solar buyers in India: sizing and EMI calculators from your own numbers, pointers to official subsidy sources (no figures stated), AMC checklists, and canonical Mahoday Solar page citations.",
+  "transport": { "type": "streamable-http", "stateless": true },
+  "authentication": { "required": false },
+  "read_only": true,
+  "content_status": "Site pages are launch-gated (not yet live). Subsidy and net-metering facts are not stated; official portals are linked.",
+  "documentation": "https://github.com/MeruLocal/mahodaysolar_website_MCP"
+}
